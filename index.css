@@ -6,6 +6,7 @@ html, body {
 body {
     background-image: url("paper.gif");
     background-color: #ffffff;
+    padding-top: 2.5em;
 }
 
 main {
@@ -31,7 +32,9 @@ nav{
     left: 0;
     right: 0;
     transition: background-color 0.5s;
+
 }
+
 
 nav select {
     background-color: transparent;
@@ -64,6 +67,35 @@ nav a {
 nav a:hover {
   color: #ccc;
 }
+
+
+  
+  nav form input[type="text"] {
+    border: none;
+    flex-grow: 1;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  nav form {
+    background-color: rgba(215, 45, 45, 0.601);
+    border: 0px solid #ccc;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* nav form button[type="submit"] {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  
+  nav form button[type="submit"]:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  } */
+  
 
 .dropdown {
   position: relative;
@@ -262,4 +294,5 @@ footer a:hover {
   input[type="submit"]:hover {
     background-color: #45a049;
   }
+  
   
