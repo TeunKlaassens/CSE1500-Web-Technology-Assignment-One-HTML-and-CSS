@@ -5,10 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="login.css">
     <title>Document</title>
 </head>
 <body>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html">Workspace</a></li>
+            <li><a href="login.html">Profile</a></li>
+            <li><a href="login.html">Log-in</a></li>
+            <select>
+                <option value="/board">Board</option>
+                <option value="/board/newBoard">New Board</option>
+                <option value="/board/editBoard">Edit Board</option>
+                <option value="/board/delBoard">Delete Board</option>
+            </select>
+        </ul>
+    </nav>
     <h1>Login</h1>
   <form>
     <label for="email">Email:</label><br>
@@ -21,20 +34,5 @@
   </form> 
   <br>
   <p>Don't have an account? <a href="/signup">Sign up</a></p>
-    <footer>
-        <img src="logo.png" alt="Logo">
-        <ul>
-          <li><a href="index.html">Dashboard</a></li>
-          <li><a href="#">Profile</a></li>
-          <li class="dropdown">
-            <a href="#">Settings</a>
-            <div class="dropdown-content">
-              <a href="#">Option 1</a>
-              <a href="#">Option 2</a>
-              <a href="#">Option 3</a>
-            </div>
-          </li>
-        </ul>
-      </footer>
 </body>
 </html>

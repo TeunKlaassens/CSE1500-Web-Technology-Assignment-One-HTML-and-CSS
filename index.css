@@ -25,7 +25,7 @@ nav{
     align-items: center;
     background-color: #026AA7;
     color: #fff;
-    height: 40px;
+    height: 44px;
     position: fixed;
     top: 0;
     left: 0;
@@ -34,24 +34,17 @@ nav{
 }
 
 nav select {
-    appearance: none;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    padding: 8px;
-  }
-  
-  
-nav img {
-  height: 50px;
-  margin: 0 20px 0 30px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    line-height: 50px;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  margin: 0;
+  margin: 1em;
   padding: 0;
 }
 
@@ -225,3 +218,48 @@ footer a:hover {
     box-shadow: none;
   }
 }
+
+.container {
+    background-color: rgba(0, 191, 255, 0.1);
+    margin: 6%;
+    padding: 10%;
+    padding: 20px;
+  }
+  
+
+  form {
+    width: 400px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
