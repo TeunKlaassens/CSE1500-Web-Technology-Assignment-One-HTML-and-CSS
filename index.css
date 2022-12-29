@@ -1,5 +1,11 @@
 html, body {
     height: 200vh;
+    
+}
+
+body {
+    background-image: url("paper.gif");
+    background-color: #cccccc;
 }
 
 main {
