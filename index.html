@@ -4,37 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Task List 2023</title>
+
+    <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-    <nav id="nav">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html">Workspace</a></li>
-            <li><a href="login.html">Profile</a></li>
-            <li><a href="login.html">Log-in</a></li>
-            <select>
-                <option value="/board">Board</option>
-                <option value="/board/newBoard">New Board</option>
-                <option value="/board/editBoard">Edit Board</option>
-                <option value="/board/delBoard">Delete Board</option>
-            </select>
-            <li><form action="/search" method="get">
-                <input type="text" name="query" placeholder="Search...">
-                <!-- <button type="submit"><img src="/images/search.png" alt="Search"></button> -->
-              </form></li>
-        </ul>
-    </nav>      
-      
-    <h1>This is a header!</h1>
-    <h2>this is also a header!</h2>
+    <header>
+        <h1>Task List 2023</h1>
+        <form id="new-task-form">
+            <input 
+                type="text"
+                name="new-task-input"
+                id="new-task-input"
+                placeholder="What do you have planned?" />
+            <input 
+                type="submit"
+                id="new-task-submit"
+                value="Add task" />
+        </form>
+    </header>
 
+    <main>
+        <section class="task-list">
+            <h2>Tasks</h2>
 
-    <div class="container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-      
-    
+            <div id="tasks">
+
+                <!-- <div class= "task">
+                    <div class="content">
+                        <input 
+                            type="text"
+                            class="text"
+                            value="My new task"
+                            readonly>
+                    </div>
+                    <div class="actions">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+
+                </div> -->
+
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+
 </body>
 </html>
