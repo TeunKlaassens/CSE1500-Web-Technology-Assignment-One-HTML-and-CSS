@@ -12,6 +12,7 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Fira sans', sans-serif;
+    
 }
 
 body {
@@ -20,13 +21,17 @@ body {
     min-height: 100vh;
     background: var(--dark);
     color: #FFF;
+    
 }
 
 header {
+
     padding: 2rem 1rem;
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: 25px;
 }
 
 header h1 {
