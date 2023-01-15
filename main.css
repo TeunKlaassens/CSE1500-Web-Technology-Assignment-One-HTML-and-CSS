@@ -1,185 +1,286 @@
 :root {
+    --clr-primary: rgb(54, 112, 199);
+    --clr-light: #f4f4f4;
+    --clr-dark: #333;
+    --clr-warning: rgb(99, 36, 36);
+    /* our style */
     --dark: #374151;
-	--darker: #1F2937;
-	--darkest: #111827;
-	--grey: #6B7280;
-	--pink: #EC4899;
-	--purple: #8B5CF6;
-	--light: #EEE;
-}
-
-* {
+    --darker: #1F2937;
+    --darkest: #111827;
+    --grey: #6B7280;
+    --pink: #EC4899;
+    --purple: #8B5CF6;
+    --light: #EEE;
+    /* our style */
+  }
+  
+  *,
+  *::before,
+  *::after {
+    font-family: inherit;
     box-sizing: border-box;
+  }
+  
+  body {
     margin: 0;
-    font-family: 'Fira sans', sans-serif;
-    
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: var(--dark);
-    color: #FFF;
-    
-}
-
-header {
-
-    padding: 2rem 1rem;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, .1);
-    border-radius: 25px;
-}
-
-header h1 {
-    font-size: 2.5rem;
+    font-family: "Work Sans", sans-serif;
     font-weight: 300;
-    color: var(--grey);
-    margin-bottom: 1rem;
-}
-
-#new-task-form {
+    font-size: 1.5rem;
+    background-color: var(--dark);
+    color: var(--light);
+    display: grid;
+    grid: 
+      "header header header header" auto
+       "...... lists  active ......" auto/
+       1fr minmax(100px, 250px) minmax(200px, 450px) 1fr;
+  }
+  
+  .title {
+    grid-area: header;
+    text-align: center;
+    font-size: calc(5vw + 2rem);
+    font-weight: 900;
+    color: var(--light);
+    letter-spacing: 2px;
+    margin: 0 0 0.5em;
+  }
+  
+  .all-tasks {
+    grid-area: lists;
+  }
+  
+  .task-list {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    list-style: circle;
+    padding-left: 1.1em;
+  }
+  
+  .list-name {
+    cursor: pointer;
+  }
+  
+  .list-name:hover {
+    opacity: 0.7;
+  }
+  
+  form {
     display: flex;
-}
-input, button {
-    appearance: none;
-    border: none;
+  }
+  
+  .btn {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+  }
+  
+  .btn.create {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-right: 0.25em;
+    transition: opacity 250ms ease-in;
+  }
+  
+  .btn.create:hover {
+    opacity: 0.7;
+  }
+  
+  .btn.delete {
+    opacity: 0.7;
+    font-size: 1rem;
+    transition: color 200ms;
+  }
+  
+  .btn.delete:hover {
+    color: var(--clr-warning);
+  }
+  
+  .new {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    font-size: inherit;
     outline: none;
-    background: none;
-}
-
-#new-task-input {
-    flex: 1 1 0%;
-    background-color: var(--darker);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-right: 1rem;
-    color: var(--light);
-    font-size: 1.25rem;
-}
-
-#new-task-input::placeholder {
-    color: var(--grey);
-}
-
-#new-task-submit {
-    color: var(--pink);
-    font-size: 1.25rem;
+    padding: 0.25em;
+    transition: border-bottom 150ms ease-in;
+    order: 2;
+  }
+  
+  .new::-webkit-input-placeholder {
+    opacity: 0.4;
+  }
+  
+  .new:-ms-input-placeholder {
+    opacity: 0.4;
+  }
+  
+  .new::-ms-input-placeholder {
+    opacity: 0.4;
+  }
+  
+  .new::placeholder {
+    opacity: 0.4;
+  }
+  
+  .new:focus {
+    border-bottom-width: 3px;
+  }
+  
+  .new:focus::-webkit-input-placeholder {
+    opacity: 0.15;
+  }
+  
+  .new:focus:-ms-input-placeholder {
+    opacity: 0.15;
+  }
+  
+  .new:focus::-ms-input-placeholder {
+    opacity: 0.15;
+  }
+  
+  .new:focus::placeholder {
+    opacity: 0.15;
+  }
+  
+  .new.list {
+    font-size: 1.1rem;
+  }
+  
+  .new.task {
+    margin-bottom: 0;
+  }
+  
+  .active-list {
     font-weight: 700;
-    background-image: linear-gradient(to right, var(--pink), var(--purple));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-    cursor: pointer;
-    transition: 0.4s;
-}
-
-#new-task-submit:hover {
-    opacity: 0.8;
-}
-
-#new-task-submit:active {
-    opacity: 0.6;
-}
-
-main {
-    flex: 1 1 0%;
-    max-width: 800px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-.task-list{
-    padding: 1rem;
-}
-
-.task-list h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--grey);
-    margin-bottom: 1rem;
-}
-
-#tasks .task {
+  }
+  
+  .todo-list {
+    --spacer: 2rem;
+    grid-area: active;
+    background: var(--clr-light);
+    color: var(--clr-dark);
+  }
+  
+  .todo-header {
+    padding: var(--spacer);
+    background: #e4e4e4;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background-color: var(--darkest);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-}
-
-#tasks .task .content .text {
-    color: var(--light);
-    font-size: 1.125rem;
-    width: 100%;
-    display: block;
-    transition: 0.4s;
-}
-
-#tasks .task .content .text:not(:read-only) {
-    color: var(--pink);
-}
-
-#tasks .task .actions {
-    display: flex;
-    margin: 0 -0.5rem;
-}
-
-.task .actions button {
+  }
+  
+  .list-title {
+    margin: 0 1em 0 0;
+  }
+  
+  .task-count {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .todo-body {
+    padding: var(--spacer);
+    position: relative;
+  }
+  
+  .new-task-creator .create {
+    color: var(--clr-primary);
+  }
+  
+  [type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .task label {
+    display: flex-inline;
+    align-items: center;
+    position: relative;
+  }
+  
+  .task {
+    position: relative;
+    margin-bottom: 1.25em;
+  }
+  
+  .task::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5em;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.1;
+  }
+  
+  .custom-checkbox {
+    --size: 0.75em;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    margin-right: var(--size);
     cursor: pointer;
-    margin: 0 0.5rem;
-    font-size: 1.125rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: 0.4s;
-}
-
-.task .actions button:hover {
-    opacity: 0.8;
-}
-
-.task .actions button:active {
-    opacity: 0.6;
-}
-
-.task .actions .edit {
-    background-image: linear-gradient(to right, var(--pink), var(--purple));
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;
-}
-
-.task .actions .delete {
-    color: crimson;
-}
-
-.navbar {
-    background-color: #374151;
-}
-
-.btn {
-    color: #374151;
-    text-decoration: none;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--grey);
-    margin: 1rem;
-    float: right;
-}
-
-#email {
-    flex: 1 1 0%;
-    background-color: var(--darker);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-right: 1rem;
-    color: var(--light);
-    font-size: 1.25rem;
-}
-
-#email::placeholder {
-    color: var(--dark);
-}
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    transition: -webkit-transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out;
+    transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  }
+  
+  .task:hover .custom-checkbox,
+  [type="checkbox"]:focus + label .custom-checkbox {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    color: var(--clr-primary);
+  }
+  
+  [type="checkbox"]:checked + label .custom-checkbox {
+    background: var(--clr-primary);
+    border-color: var(--clr-primary);
+    box-shadow: inset 0 0 0px 2px white;
+  }
+  
+  [type="checkbox"]:checked + label {
+    opacity: 0.5;
+  }
+  
+  .task label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    left: 1.5em;
+    top: 50%;
+    height: 3px;
+    background: currentColor;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    transition: -webkit-transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out;
+  }
+  
+  [type="checkbox"]:checked + label::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  
+  .delete-stuff {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -35px;
+    color: var(--clr-light);
+  }
